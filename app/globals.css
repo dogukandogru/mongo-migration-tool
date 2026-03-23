@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --mongo-green: #00ED64;
+  /* Slightly darker than brand green — links & emphasis */
+  --mongo-green-link: #00a34c;
+  --mongo-dark-green: #00684A;
+  --mongo-forest: #023430;
+  --mongo-navy: #001E2B;
+  --mongo-light-green: #E3FCF7;
+  --mongo-bg: #F9FBFA;
+  --mongo-border: #E8EDEB;
+  --mongo-text-secondary: #5C6C75;
+  /* TeleMinute / Telegram-inspired (teleminute.com) */
+  --teleminute-bg: #17212b;
+  --teleminute-surface: #1e2a38;
+  --teleminute-border: #2a3f52;
+  --teleminute-accent: #2aabee;
+  --teleminute-accent-hover: #54c0f5;
+  --teleminute-text: #e8f4fc;
+  --teleminute-muted: #8fa3b8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-mongo-green: var(--mongo-green);
+  --color-mongo-green-link: var(--mongo-green-link);
+  --color-mongo-dark-green: var(--mongo-dark-green);
+  --color-mongo-forest: var(--mongo-forest);
+  --color-mongo-navy: var(--mongo-navy);
+  --color-mongo-light-green: var(--mongo-light-green);
+  --color-mongo-bg: var(--mongo-bg);
+  --color-mongo-border: var(--mongo-border);
+  --color-mongo-text-secondary: var(--mongo-text-secondary);
+  --color-teleminute-bg: var(--teleminute-bg);
+  --color-teleminute-surface: var(--teleminute-surface);
+  --color-teleminute-border: var(--teleminute-border);
+  --color-teleminute-accent: var(--teleminute-accent);
+  --color-teleminute-accent-hover: var(--teleminute-accent-hover);
+  --color-teleminute-text: var(--teleminute-text);
+  --color-teleminute-muted: var(--teleminute-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 60px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--mongo-bg);
+  color: var(--mongo-navy);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes progress-stripe {
+  0% { background-position: 1rem 0; }
+  100% { background-position: 0 0; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+.animate-pulse-green {
+  animation: pulse-green 1.5s ease-in-out infinite;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+.animate-progress-stripe {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255,255,255,0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255,255,255,0.15) 50%,
+    rgba(255,255,255,0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  animation: progress-stripe 0.5s linear infinite;
 }
