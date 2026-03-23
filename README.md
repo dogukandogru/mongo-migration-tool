@@ -1,8 +1,13 @@
-# Mongo Migration Tool
+# Mongo Migration Tool · [mongomigrate.app](https://mongomigrate.app)
 
-Open-source web tool to migrate data between MongoDB databases. Simply provide connection strings and transfer your collections seamlessly.
+Open-source web app to migrate data between MongoDB databases. Enter your source and target connection strings, pick collections, and run the migration from the browser.
 
-![Next.js](https://img.shields.io/badge/Next.js-15-black)
+| | Link |
+|---|------|
+| **Website** | **[mongomigrate.app](https://mongomigrate.app)** |
+| **Repository** | [github.com/dogukandogru/mongo-migration-tool](https://github.com/dogukandogru/mongo-migration-tool) |
+
+![Next.js](https://img.shields.io/badge/Next.js-16-black)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Driver-green)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
@@ -17,7 +22,7 @@ Open-source web tool to migrate data between MongoDB databases. Simply provide c
 
 ## Tech Stack
 
-- **Framework**: Next.js 15 (App Router)
+- **Framework**: Next.js (App Router)
 - **Language**: TypeScript
 - **Styling**: TailwindCSS
 - **Database**: MongoDB Node.js Driver
@@ -74,6 +79,8 @@ Deploy to Vercel with one click:
 - **Hobby Plan**: Serverless functions have a 10-second timeout. Suitable for small databases only.
 - **Pro Plan**: Functions can run up to 300 seconds (`maxDuration: 300` is configured). Recommended for larger migrations.
 - For very large databases, consider running locally or on a server with no timeout limits.
+
+Point your custom domain (**mongomigrate.app**) to the Vercel project in the project **Settings → Domains**.
 
 ## Security
 
