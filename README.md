@@ -27,6 +27,7 @@ Open-source web app to migrate data between MongoDB databases. Enter your source
 - **Styling**: TailwindCSS
 - **Database**: MongoDB Node.js Driver
 - **Deployment**: Vercel
+- **Analytics**: [Vercel Web Analytics](https://vercel.com/docs/analytics) (`@vercel/analytics`)
 
 ## Getting Started
 
@@ -82,11 +83,15 @@ Deploy to Vercel with one click:
 
 Point your custom domain (**mongomigrate.app**) to the Vercel project in the project **Settings → Domains**.
 
+### Web Analytics
+
+After deploy, open your Vercel project → **Analytics** tab and enable **Web Analytics** so page views and traffic are recorded (the `@vercel/analytics` package is already in the app).
+
 ## Security
 
 - Connection strings are transmitted via HTTPS and processed in-memory only
 - No data is persisted between requests
-- No analytics, tracking, or third-party services
+- **Vercel Web Analytics** is enabled for aggregate traffic only (no connection strings or migration data)
 - Server-side processing ensures credentials never reach the browser after submission
 
 ## License
